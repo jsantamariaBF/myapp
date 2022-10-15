@@ -1,7 +1,7 @@
 import React from 'react';
 import {ActivityIndicator, View} from 'react-native';
 import {Text} from 'react-native-elements';
-import {styles} from '../styles';
+import {styles} from '../styles/styles';
 
 export const Loader = ({size, text}: {size: number | any, text: string}) => {
   return (

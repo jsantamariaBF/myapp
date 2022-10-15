@@ -1,147 +1,61 @@
-import {StyleSheet, Platform} from 'react-native';
-import {palette} from './palette';
-import {align, font, weight} from './font';
-import {sizes} from './sizes';
-import { isIOS } from '../../utils';
+import {StyleSheet} from 'react-native';
 
-export const styles = StyleSheet.create({
-  container: {
-    flexDirection: align.flexColumnReverse,
-    justifyContent: align.flexBetween,
-    padding: sizes.large,
-  },
-  itemContainer: {
-    flex: 1,
-    flexDirection: align.flexRow,
-    justifyContent: align.flexBetween,
-  },
-  homeContainer: {
-    flex: 1,
-    flexGrow: 1,
-  },
-  loadingContainer: {
-    backgroundColor: palette.white,
-    height: sizes.hundred * 4,
-    flexDirection: align.flexRow,
-    justifyContent: align.center,
-    alignItems: align.flexStart,
-    top: sizes.hundred * 4,
-    position: 'absolute',
-    width: sizes.hundred * 4,
-    zIndex: sizes.hundred,
-  },
-  detailsContainer: {
-    flex: 1,
-    flexDirection: align.flexRow,
-    justifyContent: align.flexBetween,
-    padding: sizes.medium,
-  },
-  headerContainer: {
-    backgroundColor: palette.black,
-    flexDirection: align.flexRow,
-    paddingVertical: isIOS ? sizes.null : sizes.medium,
-  },
-  flatListContainer: {
-    flex: 0,
-    marginBottom: sizes.xxl,
-  },
-  characterNameContainer: {
-    flex: 1,
-    justifyContent: align.center,
-    alignItems: align.center,
-  },
-  sectionContainer: {
-    padding: sizes.medium,
-    marginTop: sizes.extraMedium,
-  },
-  vehiclesContainer: {
-    padding: sizes.medium,
-  },
-  loadingContainer2: {
-    alignItems: align.center,
-    justifyContent: align.center,
-    flexDirection: align.flexRow,
-  },
-  iconContainer: {
-    marginLeft: isIOS ? sizes.null : sizes.medium,
-  },
-  loadingWrapper: {
-    flexDirection: align.flexRow,
-    justifyContent: align.center,
-    alignItems: align.center,
-    marginTop: sizes.small,
-  },
-  characterList: {
-    flexGrow: 1,
-    paddingBottom: sizes.hundred,
-  },
-  name: {
-    fontWeight: weight.bold,
-    fontSize: font.large,
-    color: palette.black,
-  },
-  separator: {
-    backgroundColor: palette.separatorColor,
-    height: 1,
-    width: sizes.auto,
-    marginLeft: sizes.large,
-  },
-  spinner: {
-    flex: 1,
-    justifyContent: align.center,
-    alignItems: align.flexStart,
-    flexDirection: align.flexRow,
-    marginTop: sizes.small,
-  },
-  spinner2: {
-    flex: 1,
-    justifyContent: align.center,
-    alignItems: align.center,
-  },
-  errorMessage: {
-    fontSize: font.large,
-    fontWeight: weight.bold,
-    color: palette.red,
-    marginTop: sizes.small,
-  },
-  loading: {
-    marginLeft: sizes.extraSmall,
-    fontSize: font.large,
-  },
-  loadingText: {
-    marginTop: sizes.small,
-    marginLeft: sizes.small,
-    marginBottom: sizes.small - 2,
-    fontSize: font.large,
-    textAlign: align.center,
-    textAlignVertical: align.center,
-    color: palette.grey,
-    fontWeight: weight.bold
-  },
-  characterName: {
-    color: palette.white,
-    fontSize: font.large,
-    fontWeight: weight.bold,
-    marginRight: sizes.xxl,
-  },
-  informationKey: {
-    color: palette.grey,
-    fontWeight: weight.bold,
-    fontSize: font.large,
-  },
-  sectionLabel: {
-    fontWeight: weight.bold,
-    fontSize: font.large,
-    color: palette.black,
-  },
-  noVehiclesMessage: {
-    textAlign: align.left,
-    paddingVertical: sizes.extraMedium,
-    fontSize: font.large,
-    fontWeight: weight.bold,
-    color: palette.grey,
-  },
-  icon: {
-    padding: sizes.small,
-  },
+export const font = StyleSheet.create({
+  null: 0,
+  extraSmall: 5,
+  small: 12,
+  medium: 15,
+  large: 18,
+  xl: 22,
+  xxl: 25,
+  xxxl: 28,
+});
+
+export const weight = StyleSheet.create({
+  normal: '400',
+  bold: '700',
+  extraBold: '900',
+});
+
+
+export const align = StyleSheet.create({
+  left: 'center',
+  right: 'right',
+  center: 'center',
+  top: 'top',
+  bottom: 'bottom',
+  flexBetween: 'space-between',
+  flexStart: 'flex-start',
+  flexColumnReverse: 'column-reverse',
+  flexRow: 'row',
+  flexColumn: 'column',
+});
+
+export const position = StyleSheet.create({
+  absolute: 'absolute',
+  relative: 'relative',
+});
+
+export const palette = StyleSheet.create({
+  white: '#FFFFFF',
+  black: '#000000',
+  gray: '#707070',
+  red: '#CF2B07',
+  separatorColor: '#d3d3d3',
+});
+
+
+export const sizes = StyleSheet.create({
+  null: 0,
+  extraSmall: 5,
+  small: 10,
+  medium: 15,
+  extraMedium: 20,
+  large: 25,
+  extraLarge: 30,
+  xl: 35,
+  xxl: 40,
+  xxxl: 45,
+  hundred: 100,
+  auto: 'auto',
 });

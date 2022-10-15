@@ -5,8 +5,8 @@ import axios from 'axios';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
-import {styles} from '../styles';
-import {font} from '../styles/font';
+import {styles} from '../styles/styles';
+import {font} from '../styles';
 import {capitalize} from '../../utils';
 
 import {Separator} from '../components/Separator';
