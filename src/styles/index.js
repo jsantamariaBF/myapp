@@ -50,7 +50,7 @@ export const sizes = StyleSheet.create({
   extraSmall: 5,
   small: 10,
   medium: 15,
-  extraMedium: 20,
+  extraMedium: 18,
   large: 25,
   extraLarge: 30,
   xl: 35,

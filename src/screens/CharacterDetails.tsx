@@ -5,8 +5,8 @@ import axios from 'axios';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
-import {styles} from '../styles/styles';
-import {font} from '../styles';
+import {font, sizes} from '../styles';
+import { styles } from '../styles/styles';
 import {capitalize} from '../../utils';
 
 import {Separator} from '../components/Separator';
@@ -42,11 +42,10 @@ export const CharacterDetails = ({route}: {route: any}) => {
         <View style={styles.detailsContainer}>
           <Text style={styles.informationKey}>{item?.name}</Text>
         </View>
-        <Separator />
+        <Separator marginLeft={sizes.extraMedium} />
       </>
     );
   };
-
   const renderInformation = ({item}: any) => {
     return (
       <>
@@ -57,25 +56,25 @@ export const CharacterDetails = ({route}: {route: any}) => {
           <Text style={styles.informationKey}>Eye Color</Text>
           <Text style={styles.name}>{capitalize(item.eye_color)}</Text>
         </View>
-        <Separator />
+        <Separator marginLeft={sizes.extraMedium} />
 
         <View style={styles.detailsContainer}>
           <Text style={styles.informationKey}>Hair Color</Text>
           <Text style={styles.name}>{capitalize(item.hair_color)}</Text>
         </View>
-        <Separator />
+        <Separator marginLeft={sizes.extraMedium} />
 
         <View style={styles.detailsContainer}>
           <Text style={styles.informationKey}>Skin Color</Text>
           <Text style={styles.name}>{capitalize(item.skin_color)}</Text>
         </View>
-        <Separator />
+        <Separator marginLeft={sizes.extraMedium} />
 
         <View style={styles.detailsContainer}>
           <Text style={styles.informationKey}>Birth Year</Text>
           <Text style={styles.name}>{capitalize(item.birth_year)}</Text>
         </View>
-        <Separator />
+        <Separator marginLeft={sizes.extraMedium} />
       </>
     );
   };

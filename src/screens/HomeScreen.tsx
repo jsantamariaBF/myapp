@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   StatusBar,
 } from 'react-native';
-import {useNavigation, useNavigationState, useScrollToTop} from '@react-navigation/native';
+import {useNavigation, useNavigationState} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 import {styles} from '../styles/styles';
