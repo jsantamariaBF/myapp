@@ -10,13 +10,14 @@ import {useNavigation, useNavigationState} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 import {styles} from '../styles/styles';
-import { sizes } from '../styles';
-import { isAndroid, isIOS } from '../../utils';
+import {sizes} from '../styles';
+import {isAndroid, isIOS} from '../../utils';
+
+import {peopleAPI, planetsAPI, speciesAPI} from '../apis';
 
 import {Loader} from '../components/Loader';
-import { CustomIcon } from '../components/CustomIcon';
+import {CustomIcon} from '../components/CustomIcon';
 
-import { peopleAPI, planetsAPI, speciesAPI } from '../apis';
 
 // set prop type to useNavigation
 type StackParamList = {
@@ -73,8 +74,6 @@ export const HomeScreen = () => {
   }, [currentPage]);
 
   useEffect(() => {
-    console.log(scroll);
-    
     if (isAndroid && scroll >= 290) {
       fetchMoreData();
     }
