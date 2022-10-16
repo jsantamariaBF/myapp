@@ -13,7 +13,7 @@ import {styles} from '../styles/styles';
 import {sizes} from '../styles';
 import {isAndroid, isIOS} from '../../utils';
 
-import {peopleAPI, planetsAPI, speciesAPI} from '../apis';
+import {fetchPeople} from '../apis';
 
 import {Loader} from '../components/Loader';
 import {CustomIcon} from '../components/CustomIcon';
@@ -36,24 +36,13 @@ export const HomeScreen = () => {
   const state = useNavigationState(status => status);
   const navigation = useNavigation<StackNavigationProp<StackParamList>>();
 
-  const fetchPeople = async() => {
+  const fetchCharacters = async() => {
     setLoading(true);
-    try {
-      const response: Array<any> = await Promise.all([peopleAPI(currentPage), planetsAPI(currentPage), speciesAPI(currentPage)])
-      const [characterData, planetData, specieData] = response; 
-
-        const combined = characterData?.data?.results.map((item: any, index: number) => {
-          return {...item, name: item?.name, planetName: planetData?.data?.results[index]?.name, specieName: specieData?.data?.results[index]?.name}
-        });
-
-        setCharacters(combined)
-
-    } catch (err) {
-      setError(true);
-    } finally {
-      flatListRef?.current.scrollToOffset({animated: true, offset: 0})
-      setLoading(false);
-    }
+    const { error, combined } = await fetchPeople(currentPage);
+    setCharacters(combined);
+    setError(error);
+    flatListRef?.current.scrollToOffset({animated: true, offset: 0})
+    setLoading(false);
   };
 
   const fetchMoreData = (scrollUp?: number) => {
@@ -70,7 +59,7 @@ export const HomeScreen = () => {
       return;
     }
     setIsNavigating(false);
-    fetchPeople();
+    fetchCharacters();
   }, [currentPage]);
 
   useEffect(() => {
